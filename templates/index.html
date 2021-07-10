@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <title>Water Required Prediction</title>
+
+  <style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Spartan', sans-serif;
+    }
+
+    .container{
+      height: 100vh;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 55% 45%;
+    }
+    #image{
+      background-size: cover;
+      background-image: url(https://images.unsplash.com/photo-1621938846418-d802c4d3c5b4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODZ8fGNyb3BzfGVufDB8MXwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+    }
+
+    .inputs{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 0 2rem;
+      background: rgb(92,236,113);
+      background: linear-gradient(295deg, rgba(92,236,113,1) 0%, rgba(210,255,60,1) 100%);
+    }
+    .heading{
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .heading p{
+      margin: 0 0 30px 0;
+    }
+
+    input{
+      padding: 8px 15px;
+      box-sizing: border-box;
+      margin: 5px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-weight: 500;
+    }
+    .div50-cont{
+      display: flex;
+    }
+    .div50{
+      width: 50%;
+    }
+    #other-inp{
+      display: flex;
+      flex-direction: column;
+    }
+    #btn-sub{
+      width: fit-content;
+      align-self: center;
+      background-color: rgb(46, 184, 46);
+      font-weight: 600;
+      border: none;
+      font-size: 17px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    #btn-sub:hover{
+      background-color: rgb(37, 142, 37);
+
+    }
+    #result{
+      font-weight: 600;
+      font-size: 19px;
+    }
+
+    @media screen and (max-width: 970px) {
+      .container{
+        grid-template-columns: 40% 60%;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .container{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+      }
+      #image{
+        height: 40vh;
+        width: 100%;
+        background-position: center;
+      }
+      .heading{
+        margin-top: 28px;
+        font-size: 19px;
+      }
+      input{
+        font-size: 12px;
+      }
+      #btn-sub{
+        font-size: 13px;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+    <div id="image"></div>
+  
+    <div class="inputs">
+      <div class="heading">
+        <p>Predicting Water Requirement of the Field based on Various Parameters</p>
+      </div>
+      <div>
+        <form action="{{ url_for('results') }}" method="POST">
+          <div class="div50-cont">
+            <input type="text" name="date" class="div50" placeholder="Today's date" required="required">
+            <input type="text" name="month" class="div50" placeholder="Month(1-12)" required="required">
+          </div>
+          <div class="div50-cont">
+            <input type="text" name="mintemp" class="div50" placeholder="Min Temp(in deg Celsius)" required="required">
+            <input type="text" name="maxtemp" class="div50" placeholder="Max Temp(in deg Celsius)" required="required">
+          </div>
+          <div id="other-inp">
+            <input type="text" name="humidity" id="" placeholder="Percent Humidity" required="required">
+            <input type="text" name="windspeed" id="" placeholder="Wind Speed" required="required">
+            <input type="text" name="solar" id="" placeholder="Solar Irradiance" required="required">
+            <input type="text" name="sun" id="" placeholder="Radiant Energy by Sun(in Mega Joules)" required="required">
+            <input type="text" name="kc" id="" placeholder="Crop Coefficient" required="required">
+            <input type="submit" name="submit" id="btn-sub">
+          </div>
+          <br><br>
+          <div id="result"> {{ results }} </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
