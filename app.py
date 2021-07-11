@@ -18,4 +18,4 @@ def results():
   return render_template("index.html", results = "Water Required by the Crop:- {:0.3f} mm/day". format(pred_res[0]))
 
 if __name__ == "__main__":
-  app.run()
+  app.run(debug=True)
