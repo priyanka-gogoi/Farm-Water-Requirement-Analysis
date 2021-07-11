@@ -13,3 +13,5 @@ Explaination of ML code:- https://drive.google.com/file/d/1lwHEF4uVRJJ5jk3o93vcs
 Working of the WebApp:- https://drive.google.com/drive/folders/1LDSukgRyKRF-NyoG_3GUBlv5CAt-G9gH?usp=sharing
 
 This project is a joint effort of me and my teammates:- R Jyosthna, Priyanka Gogoi, R Melvin Raj and R Akshay Sunny for the Hackathon "DoubleSlash" conducted by IEEE SB Jadavpur University
+
+![Screenshot (101)](https://user-images.githubusercontent.com/59721333/125187129-b3173800-e24b-11eb-9d6f-b3dcc2cc56aa.png)
