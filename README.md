@@ -6,7 +6,7 @@ Water scarcity is a major problem in the world and methods to save water have to
 
 This is a web-app which determines the water requirement of a crop depending on various factors like temperature, humidity, etc. so that the farmer knows how much amount of water to use.
 
-This is made using HTML, CSS, Flask and Machine learning(Python)
+This is made using HTML, CSS, Flask and Machine learning(Linear Regression)
 
 Explaination of ML code:- https://drive.google.com/file/d/1lwHEF4uVRJJ5jk3o93vcsF5q_bLzgkL3/view?usp=sharing
 
